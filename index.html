@@ -122,7 +122,7 @@ body {
           countRef.on("value", (snapshot) => {
             document.getElementById("count").innerText = snapshot.val() || 0;
           });
-
+          countRef.set(5);
           function vote() {
              countRef.transaction((current) => (current || 0) + 1);
           }
