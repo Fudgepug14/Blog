@@ -102,30 +102,30 @@ body {
 
       <div>
         <h1>Votes: <span id="count">0</span></h1>
-          <button onclick="vote()">Vote</button>
+        <button onclick="vote()">Vote</button>
 
-          <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
-          <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js"></script>
 
-          <script>
-            const firebaseConfig = {
-              apiKey: "AIzaSyAIlr1JF9bkO9rB84t0zM8iW4f6ToAA8Ac",
-              databaseURL: "https://blogdatabase-f649c-default-rtdb.firebaseio.com/",
-              projectId: "blogdatabase-f649c"
-            };
+        <script>
+          const firebaseConfig = {
+            apiKey: "AIzaSyAIlr1JF9bkO9rB84t0zM8iW4f6ToAA8Ac",
+            databaseURL: "https://blogdatabase-f649c-default-rtdb.firebaseio.com/",
+            projectId: "blogdatabase-f649c"
+          };
 
-            const app = firebase.initializeApp(firebaseConfig);
-            const db = firebase.database();
-            const countRef = db.ref("votes");
+          const app = firebase.initializeApp(firebaseConfig);
+          const db = firebase.database();
+          const countRef = db.ref("votes");
 
-            // Listen for changes (real-time updates)
-            countRef.on("value", (snapshot) => {
-              document.getElementById("count").innerText = snapshot.val() || 0;
-            });
+          // Listen for changes (real-time updates)
+          countRef.on("value", (snapshot) => {
+            document.getElementById("count").innerText = snapshot.val() || 0;
+          });
 
-            function vote() {
-              countRef.transaction((current) => (current || 0) + 1);
-            }
+          function vote() {
+             countRef.transaction((current) => (current || 0) + 1);
+          }
         </script>
       </div>
     </div>
