@@ -127,10 +127,17 @@ body {
             document.getElementById("count").innerText = snapshot.val() || 0;
           });
 
-          function vote() {
-            countRef.transaction((current) => {
+          function vote(option) {
+            if (localStorage.getItem("voted")) {
+              alert("You already voted!");
+              return;
+            }
+
+            pollRef.child(option).transaction((current) => {
               return (current || 0) + 1;
             });
+
+            localStorage.setItem("voted", "true");
           }
         </script>
       </div>
