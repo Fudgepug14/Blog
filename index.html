@@ -84,6 +84,21 @@ body {
     <div class="card">
       <h2>Welcome</h2>
       <p>Nothing to see here.. yet.....</p>
+
+      <div class="counter-container">
+        <button onclick="decrement()">-</button>
+        <input type="number" id="counter" value="0">
+        <button onclick="increment()">+</button>
+      </div>
+
+      <script>
+        function increment() {
+          document.getElementById('counter').stepUp();
+        }
+        function decrement() {
+          document.getElementById('counter').stepDown();
+        }
+      </script>
     </div>
   </div>
 </div>
