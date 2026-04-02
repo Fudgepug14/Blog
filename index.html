@@ -101,8 +101,8 @@ body {
       </script>
 
       <div>
-        <h1>Votes: <span id="count">0</span></h1>
-        <button onclick="vote()">Vote</button>
+        <h1>The Hatchery: <span id="count">0</span></h1>
+        <button onclick="vote()">Generate Rainbow Trout</button>
 
         <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
@@ -127,17 +127,10 @@ body {
             document.getElementById("count").innerText = snapshot.val() || 0;
           });
 
-          function vote(option) {
-            if (localStorage.getItem("voted")) {
-              alert("You already voted!");
-              return;
-            }
-
-            pollRef.child(option).transaction((current) => {
+          function vote() {
+            countRef.transaction((current) => {
               return (current || 0) + 1;
             });
-
-            localStorage.setItem("voted", "true");
           }
         </script>
       </div>
