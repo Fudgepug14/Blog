@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("/images/fishhy.gif");
+}
+
+.header {
+  padding: 100px 0% 0px;
+  font-size: 80px;
+  text-align: center;
+}
+
+.headertext {
+  font-family: Impact;
+  font-style: italic;
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  transform: translate(-20%, -50%);
+  color: white
+}
+
+.mainblog {   
+  float: left;
+  width: 100%;
+}
+
+.image {
+  background-color: #aaa;
+  width: 5%;
+  padding: 5px;
+}
+
+.leftcolumn {   
+  float: left;
+  width: 50%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 50%;
+  padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-image: linear-gradient(to bottom, rgb(255, 241, 234), rgb(250, 198, 131));
+   padding: 20px;
+   margin-top: 20px;
+   font-family: Georgia;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: rgb(255, 175, 110);
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+</style>
+
+<title>the gallery</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+
+<div class="header">
+  <div class ="headertext">
+    <h1>the gallery</h1>
+    
+  </div>
+</div>
+
+<div class="row">
+  <div class="mainblog">
+    <div class="card">
+        <audio controls autoplay id="myaudio">
+            <source src="Four Seasons ~ Vivaldi [GRxofEmo3HA].mp3">
+        </audio>
+        <script>
+            var Vivaldi = document.getElementById("myaudio")
+            Vivaldi.volume = 0.1;
+        </script>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+    <h2><a href="https://kakeblog.vercel.app">ㅤㅤㅤㅤㅤㅤHomeㅤㅤㅤㅤㅤㅤ</a></h2>
+  <h2>Hey what's up?ㅤㅤㅤㅤㅤㅤ*ㅤㅤㅤㅤㅤㅤKakeblog made by Andrew Muellerㅤㅤㅤㅤㅤㅤ*ㅤㅤㅤㅤㅤㅤEST 4/1/2026</h2>
+  <h5>Thank you to Evan for being a great friend and inspiring me! Check out his blog at <a href="https://webagge.vercel.app">webagge.vercel.app</a></h5>
+</div>
+
+</body>
+</html>
