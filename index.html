@@ -110,8 +110,12 @@ body {
         <script>
           const firebaseConfig = {
             apiKey: "AIzaSyAIlr1JF9bkO9rB84t0zM8iW4f6ToAA8Ac",
-            databaseURL: "https://blogdatabase-f649c-default-rtdb.firebaseio.com/",
-            projectId: "blogdatabase-f649c"
+            authDomain: "blogdatabase-f649c.firebaseapp.com",
+            databaseURL: "https://blogdatabase-f649c.firebaseio.com/",
+            projectId: "blogdatabase-f649c",
+            storageBucket: "blogdatabase-f649c.firebasestorage.app",
+            messagingSenderId: "961950459190",
+            appId: "1:961950459190:web:8755d7d5159dbb25227f97"
           };
 
           const app = firebase.initializeApp(firebaseConfig);
@@ -122,7 +126,7 @@ body {
           countRef.on("value", (snapshot) => {
             document.getElementById("count").innerText = snapshot.val() || 0;
           });
-          
+
           function vote() {
             countRef.set(5);
             countRef.transaction((current) => (current || 0) + 1);
