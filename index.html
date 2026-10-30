@@ -132,7 +132,6 @@ body {
           const db = firebase.database();
           const countRef = db.ref("votes");
 
-          // Listen for changes (real-time updates)
           countRef.on("value", (snapshot) => {
             document.getElementById("count").innerText = snapshot.val() || 0;
           });
