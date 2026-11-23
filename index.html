@@ -84,6 +84,10 @@ body {
   }*/
 }
 
+#troutJump {
+  display: none;
+}
+
 </style>
 
 
@@ -138,7 +142,9 @@ body {
         <div> <!--The Hatchery-->
           <h3>The Hatchery: <span id="count">0</span></h3>
           <button onclick="vote()">Generate Rainbow Trout</button>
-  
+          
+          <img id="troutJump" src="images/troutJump.gif">
+
           <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
           <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
   
@@ -160,11 +166,25 @@ body {
             countRef.on("value", (snapshot) => {
               document.getElementById("count").innerText = snapshot.val() || 0;
             });
-  
+            
+            const fishGif = document.getElementById('troutJump');
+            const currentSRC = fisGif.src;
+            let hideTimeout;
+
             function vote() {
               countRef.transaction((current) => {
                 return (current || 0) + 1;
               });
+
+              clearTimeout(hideTimeout);
+
+              fisGif.src = '';
+              fisGif.src = currentSRC;
+
+              fisGif.style.display = 'block'
+
+              hideTimeout = setTimeout(() => {fisGif.style.display = 'none';}, 3000);
+
             }
           </script>
         </div>
