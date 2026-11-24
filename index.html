@@ -168,7 +168,7 @@ body {
             });
             
             const fishGif = document.getElementById('troutJump');
-            const currentSRC = fisGif.src;
+            const currentSRC = fishGif.src;
             let hideTimeout;
 
             function vote() {
@@ -178,12 +178,12 @@ body {
 
               clearTimeout(hideTimeout);
 
-              fisGif.src = '';
-              fisGif.src = currentSRC;
+              fishGif.src = '';
+              fishGif.src = currentSRC;
 
-              fisGif.style.display = 'block'
+              fishGif.style.display = 'block'
 
-              hideTimeout = setTimeout(() => {fisGif.style.display = 'none';}, 3000);
+              hideTimeout = setTimeout(() => {fishGif.style.display = 'none';}, 1000);
 
             }
           </script>
