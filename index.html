@@ -58,6 +58,11 @@ body {
    line-height: 1.2;
 }
 
+.container {
+  display: flex;
+  gap: 20px;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -139,11 +144,12 @@ body {
         <br>
         <br>
         <h5><span style="color: #a0a0a0">Nothing else to see... for now......</span></h5>
-        <div> <!--The Hatchery-->
+        
+        <div class = "container"> <!--The Hatchery-->
           <h3>The Hatchery: <span id="count">0</span></h3>
           <button onclick="vote()">Generate Rainbow Trout</button>
           
-          <img id="troutJump" src="images/troutJump.gif">
+          <img id="troutJump" src="images/troutJump.gif" style="">
 
           <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
           <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
